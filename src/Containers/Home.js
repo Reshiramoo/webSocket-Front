@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useItems } from '../Context/globalContext';
 import LoadingOverlay from '../Components/LoadingOverlay';
 import { handleError } from '../Utility/errorHandler';
-import CatInfo from '../Components/CatInfo';
-import PetTheCat from '../Components/PetTheCat';
+import WebSocketComponent from '../Components/WebSocketComponent';
+
+
 
 const Home = () => {
   const { state, fetchItem, incrementCounter } = useItems();
@@ -29,8 +30,7 @@ const Home = () => {
 
   return (
     <div style={styles.container}>
-      {item && <CatInfo image={item.image} fact={item.fact} counter={counter} />}
-      <PetTheCat counter={counter} incrementCounter={incrementCounter} />
+      <WebSocketComponent/>
     </div>
   );
 };
